@@ -12,14 +12,17 @@ import lombok.Setter;
 @Entity
 public class Task {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "tsk_id")
     private Integer id;
-    @Column(nullable = false)
+    @Column(nullable = false, name = "tsk_nombre")
     private String nombre;
+    @Column(name = "tsk_descripcion")
     private String descripcion;
-    @Column(nullable = false)
+    @Column(nullable = false,name = "tsk_check")
     private Boolean check;
     @ManyToOne
+    @JoinColumn(name = "tsk_usr_id", nullable = false)
     private Usuario usuario;
 
 }

@@ -10,12 +10,14 @@ import lombok.*;
 @NoArgsConstructor
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "usr_id")
     private Integer id;
-    @Column(nullable = false)
+    @Column(nullable = false,name = "usr_mail")
     private String mail;
-    @Column(nullable = false)
+    @Column(nullable = false,name = "usr_contraseña")
     private String contraseña;
-    @Column(nullable = false)
+    @Column(nullable = false,name = "usr_estado")
+    @Enumerated(EnumType.STRING)
     private UsuarioEstadoEnum estado;
 }
