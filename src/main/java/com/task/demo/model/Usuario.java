@@ -1,5 +1,6 @@
 package com.task.demo.model;
 
+import com.task.demo.enums.UsuarioEstadoEnum;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -10,8 +11,11 @@ import lombok.*;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private String id;
-    @Column(nullable = false,unique = true)
+    private Integer id;
+    @Column(nullable = false)
     private String mail;
+    @Column(nullable = false)
     private String contraseña;
+    @Column(nullable = false)
+    private UsuarioEstadoEnum estado;
 }
