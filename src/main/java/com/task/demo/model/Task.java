@@ -1,10 +1,11 @@
 package com.task.demo.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.*;
 
 @Getter@Setter
 @AllArgsConstructor
@@ -25,4 +26,10 @@ public class Task {
     @JoinColumn(name = "tsk_usr_id", nullable = false)
     private Usuario usuario;
 
+    public Task(String nombre, String descripcion,Boolean check, Usuario usuario){
+        this.nombre=nombre;
+        this.descripcion=descripcion;
+        this.check=(check==null?check:false);
+        this.usuario=usuario;
+    }
 }

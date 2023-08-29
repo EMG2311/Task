@@ -1,10 +1,16 @@
 package com.task.demo.service;
 
-import ch.qos.logback.core.rolling.helper.IntegerTokenConverter;
-import com.task.demo.dto.TaskDto;
+import com.task.demo.dto.TaskCrearDto;
+import com.task.demo.dto.TaskModifDto;
+import com.task.demo.dto.TaskResCrearDto;
+import com.task.demo.dto.TaskResEliminarDto;
+
+import java.util.List;
 
 public interface TaskService {
-    TaskDto crearTask(TaskDto taskDto);
-    TaskDto eliminarTask(Integer id);
-    TaskDto modificarTask(TaskDto taskDto);
+    TaskResCrearDto crearTask(TaskCrearDto taskDto);
+    TaskResEliminarDto eliminarTask(Integer id);
+    TaskResCrearDto modificarTask(TaskModifDto taskDto);
+    TaskResCrearDto completarTask(Integer id);
+    List<TaskResCrearDto> listarPorIdUsuario(Integer id);
 }
