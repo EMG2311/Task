@@ -9,5 +9,7 @@ import lombok.Setter;
 public class TaskCrearDto {
     private String nombre;
     private String descripcion;
-    private Integer idUsuario;
+    private Boolean check;
+
+    public TaskCrearDto(){}
 }
